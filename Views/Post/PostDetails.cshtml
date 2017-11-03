@@ -1,0 +1,24 @@
+@{
+    ViewData["Title"] = "Like Status";
+}
+<header>
+    <a href="/bright_ideas/">Bright Ideas</a>
+    <a href="/logout/">Logout</a>
+</header>
+<p><a href="/users/@ViewBag.post.posterid/"> @ViewBag.post.poster.uname </a>says:</p>
+<textarea cols="50" rows="5" disabled>@ViewBag.post.posttext</textarea>
+
+<h6>People who liked this post:</h6>
+<table>
+    <thead>
+        <th>Alias</th>
+        <th>Name</th>
+    </thead>
+    @foreach(var like in @ViewBag.postlikes)
+    {
+        <tbody>
+            <td><a href="/users/@like.likerid/">@like.liker.uname</a></td>
+            <td>@like.liker.name</td>
+        </tbody>
+    }
+</table>

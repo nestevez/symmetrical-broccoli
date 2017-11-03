@@ -17,9 +17,7 @@ namespace chartreuse.Models
         [Display(Name="Email")]
         public string email {get;set;}
         [Required]
-        [Display(Name="Username")]
-        public string uname {get;set;}
-        [Required]
+        [MinLength(8)]
         [DataType(DataType.Password)]
         [Display(Name="Password")]
         public string pw {get;set;}
@@ -27,16 +25,11 @@ namespace chartreuse.Models
     public class RegisterViewModel : LoginViewModel
     {
         [Required]
-        [Display(Name="First Name")]
-        public string fname {get;set;}
+        [Display(Name="Name")]
+        public string name {get;set;}
         [Required]
-        [Display(Name="Last Name")]
-        public string lname {get;set;}
-        [Required]
-        [DataType(DataType.Date)]
-        [Display(Name="Date of Birth")]
-        [PastDate(ErrorMessage = "Date of birth must be in the past.")]
-        public DateTime dob {get;set;}
+        [Display(Name="Alias")]
+        public string uname {get;set;}
         [Required]
         [MinLength(8)]
         [Compare("pw", ErrorMessage="Passwords must match")]

@@ -1,1 +1,35 @@
-<h1>Success!</h1>
+@{
+    ViewData["Title"] = "Bright Ideas";
+}
+@model chartreuse.Models.Post
+<header>
+    <a href="/logout/">Logout</a>
+</header>
+<h1>Hi @ViewBag.curruser.uname!</h1>
+<form asp-controller="Post" asp-action="AddPost" method="post">
+    <input asp-for="posttext" placeholder="Post something witty here...">
+    <input type="submit" value="Idea!">
+</form>
+
+@{
+    @foreach(var post in @ViewBag.posts)
+    {
+        <div>
+            <p><a href="/users/@post.posterid/"> @post.poster.uname </a>says:</p>
+            <textarea cols="50" rows="5" disabled>@post.posttext</textarea>
+            @if(@ViewBag.currlikes.Contains(@post.postid))
+            {
+                <p><a href="/like/delete/@post.postid/">UnLike</a></p>
+            }
+            @if(!@ViewBag.currlikes.Contains(@post.postid))
+            {
+                <p><a href="/like/add/@post.postid/">Like</a></p>
+            }
+            <p><a href="/bright_ideas/@post.postid/">@post.likes.Count people</a> like this.</p>
+            @if(@post.posterid == @ViewBag.curruser.personid)
+            {
+                <p><a href="/post/delete/">Delete Post</a></p>
+            }
+        </div>
+    }
+}

@@ -1,0 +1,13 @@
+@{
+    ViewData["Title"] = "User Profile";
+}
+<header>
+    <a href="/bright_ideas/">Bright Ideas</a>
+    <a href="/logout/">Logout</a>
+</header>
+<h3>Name: @ViewBag.person.name</h3>
+<h3>Alias: @ViewBag.person.uname</h3>
+<h3>Email: @ViewBag.person.email</h3>
+<hr>
+<h4>Total Number of Posts: @ViewBag.postsct</h4>
+<h4>Total Number of Likes: @ViewBag.likesct</h4>

@@ -8,5 +8,7 @@ namespace chartreuse.Models
         public chartreuseContext(DbContextOptions<chartreuseContext> options) : base(options) 
         {} 
         public DbSet<Person> users {get;set;}
+        public DbSet<Post> posts {get;set;}
+        public DbSet<Like> likes {get;set;}
     }
 }

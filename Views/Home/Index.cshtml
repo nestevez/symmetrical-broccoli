@@ -1,19 +1,17 @@
+@{
+    ViewData["Title"] = "Login/Registration";
+}
 @model chartreuse.Models.PersonViewModel
-<h1>Register</h1>
+<h1>Welcome</h1>
+<h2>Register</h2>
 <p>@ViewBag.regerror</p>
 <form asp-controller="Home" asp-action="AddUser" method="post">
-    <label asp-for="register.fname"></label>
-    <input asp-for="register.fname"></input>
-    <span asp-validation-for="register.fname"></span>
-    <label asp-for="register.lname"></label>
-    <input asp-for="register.lname"></input>
-    <span asp-validation-for="register.lname"></span>
+    <label asp-for="register.name"></label>
+    <input asp-for="register.name"></input>
+    <span asp-validation-for="register.name"></span>
     <label asp-for="register.uname"></label>
     <input asp-for="register.uname"></input>
     <span asp-validation-for="register.uname"></span>
-    <label asp-for="register.dob"></label>
-    <input asp-for="register.dob"></input>
-    <span asp-validation-for="register.dob"></span>
     <label asp-for="register.email"></label>
     <input asp-for="register.email"></input>
     <span asp-validation-for="register.email"></span>
@@ -27,15 +25,12 @@
 </form>
 
 
-<h1>Login</h1>
+<h2>Login</h2>
 <p>@ViewBag.logerror</p>
 <form asp-controller="Home" asp-action="Login" method="post">
     <label asp-for="login.email"></label>
     <input asp-for="login.email"></input>
     <span asp-validation-for="login.email"></span>
-    <label asp-for="login.uname"></label>
-    <input asp-for="login.uname"></input>
-    <span asp-validation-for="login.uname"></span>
     <label asp-for="login.pw"></label>
     <input asp-for="login.pw"></input>
     <span asp-validation-for="login.pw"></span>
