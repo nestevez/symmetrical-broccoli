@@ -28,7 +28,7 @@
             <p><a href="/bright_ideas/@post.postid/">@post.likes.Count people</a> like this.</p>
             @if(@post.posterid == @ViewBag.curruser.personid)
             {
-                <p><a href="/post/delete/">Delete Post</a></p>
+                <p><a href="/post/delete/@post.postid/">Delete Post</a></p>
             }
         </div>
     }
